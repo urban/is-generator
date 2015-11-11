@@ -1,0 +1,53 @@
+{
+  "name": "is-generator",
+  "version": "0.1.0",
+  "description": "Tests whether a function is an generator.",
+  "author": "Urban Faubion <urban.faubion@gmail.com> (http://urbanfaubion.com)",
+  "license": "MIT",
+  "keywords": [
+    "test",
+    "generator",
+    "ES6",
+    "ES2015"
+  ],
+  "bugs": {
+    "url": "https://github.com/urban/is-generator/issues"
+  },
+  "homepage": "https://github.com/urban/is-generator",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/urban/is-generator.git"
+  },
+  "main": "lib/index.js",
+  "jsnext:main": "src/index.js",
+  "scripts": {
+    "build:lib": "NODE_ENV=production babel src --out-dir lib",
+    "build:watch": "babel src --out-dir lib --watch",
+    "build": "rimraf lib && npm run build:lib",
+    "check": "npm run test:lint && npm test && npm run test:audit && npm outdated --depth 0",
+    "prepublish": "npm run build",
+    "test:audit": "nsp check",
+    "test:lint": "standard",
+    "test:typecheck": "flow check ./src",
+    "test": "babel-node test | tap-spec",
+    "preversion": "npm run check",
+    "version": "npm run build",
+    "postversion": "git push && git push --tags"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.1.4",
+    "babel-eslint": "^4.1.3",
+    "babel-plugin-syntax-flow": "^6.1.4",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.1.4",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.1.4",
+    "babel-plugin-transform-flow-strip-types": "^6.1.4",
+    "nsp": "^2.0.2",
+    "rimraf": "^2.4.3",
+    "standard": "^5.3.1",
+    "tap-spec": "^4.1.0",
+    "tape": "^4.2.1"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  }
+}

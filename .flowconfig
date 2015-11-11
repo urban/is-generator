@@ -1,0 +1,9 @@
+[ignore]
+.*/lib/.*
+.*/nsp/node_modules/.*
+
+[include]
+
+[libs]
+
+[options]
