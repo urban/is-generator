@@ -1,5 +1,5 @@
 {
-  "name": "is-generator",
+  "name": "@urban/is-generator",
   "version": "0.1.0",
   "description": "Tests whether a function is an generator.",
   "author": "Urban Faubion <urban.faubion@gmail.com> (http://urbanfaubion.com)",
